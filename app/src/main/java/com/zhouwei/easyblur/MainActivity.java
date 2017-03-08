@@ -53,10 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 canvas.drawBitmap(bmp, 0, 0, null);
 
                 Bitmap finalBitmap = EasyBlur.with(MainActivity.this)
-                        .bitmap(overlay)
-                        .radius(5)
-                        .scale(8)
-                        .policy(EasyBlur.BlurPolicy.RS_BLUR)
+                        .bitmap(overlay) //要模糊的图片
+                        .radius(10)//模糊半径
                         .blur();
 
                 view.setBackground(new BitmapDrawable(

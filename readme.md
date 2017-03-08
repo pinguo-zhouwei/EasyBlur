@@ -46,7 +46,31 @@ allprojects {
         renderscriptSupportModeEnabled true
     }
 ```
-
+### 使用方法
+1，简单使用，指定Bitmap和半径
+```java
+Bitmap finalBitmap = EasyBlur.with(MainActivity.this)
+                        .bitmap(overlay) //要模糊的图片
+                        .radius(10)//模糊半径
+                        .blur();
+```
+2,可以指定缩小的倍数，默认缩小倍数为8
+```java
+Bitmap finalBitmap = EasyBlur.with(MainActivity.this)
+                        .bitmap(overlay) //要模糊的图片
+                        .radius(10)//模糊半径
+                        .scale(4)//指定模糊前缩小的倍数
+                        .blur();
+```
+3, 指定使用哪一种方法,默认是使用兼容的RenderScript 高斯模糊
+```java
+Bitmap finalBitmap = EasyBlur.with(MainActivity.this)
+                        .bitmap(overlay) //要模糊的图片
+                        .radius(10)//模糊半径
+                        .scale(4)//指定模糊前缩小的倍数
+                        .policy(EasyBlur.BlurPolicy.FAST_BLUR)//使用fastBlur
+                        .blur();
+```
 ### 博客
 
 	
