@@ -30,6 +30,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
     testCompile 'junit:junit:4.12'
 
-    compile project(':blurlibrary')
+    //compile project(':blurlibrary')
+    compile 'com.github.pinguo-zhouwei:EasyBlur:v1.0.0'
 
 }
