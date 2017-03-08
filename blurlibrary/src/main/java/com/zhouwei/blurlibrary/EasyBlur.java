@@ -120,7 +120,6 @@ public class EasyBlur {
      * @return
      */
     private static Bitmap rsBlur(Context context,Bitmap source,int radius,float scale){
-        long startTime = System.currentTimeMillis();
         Log.i(TAG,"origin size:"+source.getWidth()+"*"+source.getHeight());
         int width = Math.round(source.getWidth() * scale);
         int height = Math.round(source.getHeight() * scale);
@@ -152,7 +151,6 @@ public class EasyBlur {
 
         renderScript.destroy();
 
-        Log.e("zhouwei","rs costTime:"+(System.currentTimeMillis() - startTime));
     return inputBmp;
     }
 
@@ -186,7 +184,6 @@ public class EasyBlur {
      */
 
     private static Bitmap fastBlur(Bitmap sentBitmap, float scale, int radius) {
-        long startTime = System.currentTimeMillis();
         int width = Math.round(sentBitmap.getWidth() * scale);
         int height = Math.round(sentBitmap.getHeight() * scale);
         sentBitmap = Bitmap.createScaledBitmap(sentBitmap, width, height, false);
@@ -389,7 +386,6 @@ public class EasyBlur {
 
         Log.e("pix", w + " " + h + " " + pix.length);
         bitmap.setPixels(pix, 0, w, 0, 0, w, h);
-        Log.e("zhouwei","fast costTime:"+(System.currentTimeMillis() - startTime));
         return (bitmap);
     }
 
